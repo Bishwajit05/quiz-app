@@ -1,4 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
+import ModalData from "./ModalData";
+
 import { TfiInfoAlt } from "react-icons/tfi";
 import { GrFormClose } from "react-icons/gr";
 import { TfiMedallAlt } from "react-icons/tfi";
@@ -9,10 +13,38 @@ interface modalProps {
   open: boolean;
   onClose: () => void;
 }
+interface Data {
+  id: number;
+  title: string;
+  subHeading: string;
+  image: any;
+}
+
 const Modal: React.FC<modalProps> = ({ open, onClose }) => {
+  const navigate = useNavigate();
   const handleClick = () => {
     onClose();
   };
+  const data: Data[] = [
+    {
+      id: 1,
+      title: "1 min",
+      subHeading: "Keep in mind that it's time bound quiz.",
+      image: AiOutlineClockCircle,
+    },
+    {
+      id: 2,
+      title: "5 Questions",
+      subHeading: "We believe that you will ace it!",
+      image: AiOutlineQuestionCircle,
+    },
+    {
+      id: 3,
+      title: "50% passing criteria",
+      subHeading: "All the best! See you on the other side.",
+      image: TfiMedallAlt,
+    },
+  ];
 
   if (!open) {
     return null;
@@ -35,47 +67,17 @@ const Modal: React.FC<modalProps> = ({ open, onClose }) => {
           </div>
         </div>
         <div className="w-full flex flex-col items-center justify-start">
-          <div className="w-full inline-flex gap-2 items-center px-6 py-3">
-            <AiOutlineClockCircle
-              size={35}
-              className="bg-gray-200 rounded-full h-10 w-10"
-            />
-            <div>
-              <p className="font-bold text-2xl">1 min</p>
-              <p className="text-gray-500 text-lg">
-                Keep in mind that it's time bound quiz.
-              </p>
-            </div>
-          </div>
-          <div className="w-full inline-flex gap-2 items-center px-6 py-3">
-            <AiOutlineQuestionCircle
-              size={35}
-              className="bg-gray-200 rounded-full h-10 w-10"
-            />
-            <div>
-              <p className="font-bold text-2xl">5 Questions</p>
-              <p className="text-gray-500 text-lg">
-                We believe that you will ace it!
-              </p>
-            </div>
-          </div>
-          <div className="w-full inline-flex gap-2 items-center px-6 py-3">
-            <TfiMedallAlt
-              size={30}
-              className="bg-gray-200 rounded-full h-10 w-10"
-            />
-            <div>
-              <p className="font-bold text-2xl">50% passing criteria</p>
-              <p className="text-gray-500 text-lg">
-                All the best! See you on the other side.
-              </p>
-            </div>
-          </div>
+          <ModalData modalData={data} />
+
           <span className="inline-flex gap-2 items-center text-sm text-gray-600 bg-purple-200 h-6 w-fit px-2 justify-center rounded-sm my-3">
-            <TfiInfoAlt className="rounded-full bg-purple-700" /> This quiz can
-            be attempted once daily
+            <TfiInfoAlt className="rounded-full bg-transparent" />
+            This quiz can be attempted once daily
           </span>
-          <button type="button" className="w-1/3 justify-center items-center h-14 rounded-3xl bg-purple-700 my-3 text-white text-xl font-semibold hover:bg-purple-600">
+          <button
+            onClick={() => navigate("/quiz")}
+            type="button"
+            className="w-1/3 justify-center items-center h-14 rounded-3xl bg-purple-700 my-3 text-white text-xl font-semibold hover:bg-purple-600"
+          >
             Start
           </button>
         </div>

@@ -94,7 +94,7 @@ const Homepage = () => {
                   charts and graphs, and data management."
         />
       </div>
-      <div className="pl-6 py-4">
+      <div className="pl-6 pt-4 mb-20">
         <h1 className="font-bold text-xl pb-2">This Quiz includes</h1>
         <div className="flex flex-col gap-3 text-sm w-2/4">
           <span className="inline-flex gap-2 items-center cursor-pointer">
@@ -112,11 +112,11 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="bottom-0 fixed w-full flex items-center justify-center z-10">
+      <div className="bottom-0 fixed w-full flex items-center justify-center z-10 bg-slate-200 drop-shadow-md  h-20">
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="bg-purple-800 hover:bg-purple-700 flex items-center justify-center h-14 w-1/3 rounded-3xl border-0"
+          className="bg-purple-800 hover:bg-purple-700 flex items-center justify-center h-14 w-1/3 rounded-3xl border-0 text-white font-semibold"
         >
           Take Quiz
         </button>
