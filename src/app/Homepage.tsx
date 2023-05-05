@@ -17,7 +17,7 @@ import ReactImage from "../utilities/pexels-rachel-claire-5490276.jpg";
 const Homepage = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full relative">
       <nav className="flex h-20 items-center justify-end gap-2 px-4">
         <FiSearch size={25} />
 
@@ -112,7 +112,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 w-full flex items-center justify-center">
+      <div className="bottom-0 fixed w-full flex items-center justify-center z-10">
         <button
           type="button"
           onClick={() => setOpen(true)}
