@@ -9,7 +9,6 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { HiOutlineSquare2Stack } from "react-icons/hi2";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 
-
 import Modal from "../components/Modal";
 import ReadMore from "../components/ReadMore";
 import Thumbnail from "../utilities/thumbnail1.webp";
@@ -113,7 +112,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="absolute bottom-10 w-full flex items-center justify-center">
         <button
           type="button"
           onClick={() => setOpen(true)}
