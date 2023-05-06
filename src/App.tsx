@@ -6,6 +6,8 @@ import QuizPage from "./app/QuizPage";
 import ScorePage from "./app/ScorePage";
 function App() {
   return (
+    <div className="w-full h-full">
+
     <BrowserRouter>
       <Routes>
         <Route path="/" Component={Homepage} />
@@ -13,6 +15,7 @@ function App() {
         <Route path="/score" Component={ScorePage} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 

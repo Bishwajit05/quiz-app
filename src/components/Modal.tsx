@@ -56,7 +56,7 @@ const Modal: React.FC<modalProps> = ({ open, onClose }) => {
         onClick={onClose}
       ></div>
 
-      <div className="bg-white md:rounded-xl rounded-t-xl p-4 md:p-8 lg:p-12 transform translate-y-full md:translate-y-0 mx-4 md:mx-auto min-w-full md:min-w-[50%]">
+      <div className="overflow-auto bg-white md:rounded-xl rounded-t-xl p-4 md:p-8 lg:p-12 transform translate-y-full md:translate-y-0 mx-4 md:mx-auto min-w-full md:min-w-[50%]">
         <div className="flex justify-between w-full">
           <h2 className="text-3xl font-bold mb-4">Quiz Rules</h2>
           <div
@@ -69,10 +69,10 @@ const Modal: React.FC<modalProps> = ({ open, onClose }) => {
         <div className="w-full flex flex-col items-center justify-start">
           <ModalData modalData={data} />
 
-          <span className="inline-flex gap-2 items-center text-sm text-gray-600 bg-purple-200 h-6 w-fit px-2 justify-center rounded-sm my-3">
+          {/* <span className="inline-flex gap-2 items-center text-sm text-gray-600 bg-purple-200 h-6 w-fit px-2 justify-center rounded-sm my-3 sm:text-xs">
             <TfiInfoAlt className="rounded-full bg-transparent" />
             This quiz can be attempted once daily
-          </span>
+          </span> */}
           <button
             onClick={() => navigate("/quiz")}
             type="button"
